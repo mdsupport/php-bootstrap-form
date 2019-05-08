@@ -1,9 +1,10 @@
 <?php
 session_start();
 require_once ("PFBC/Form.php");
-$version = '';
-if (isset ($_GET['v']) && $_GET['v'] == 4)
-    $version = 4;
+// Set default bootstrap version here that can be overrriden by request
+$version = '4';
+if (isset ($_GET['v']) && ($_GET['v'] !== $version))
+    $version = intval($_GET['v']);
 $options = Array ('1' => 'option #1', '2' => 'option #2');
 
 // default values
@@ -15,15 +16,18 @@ $values['select'] = 2;
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>PHP-Bootstrap-Form Example</title>
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 <?php if ($version == 4) { ?>
-    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.min.css">
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+    <!-- bootstrap.bundle.min.js includes Popper but not jQuery -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <?php } else {?>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
