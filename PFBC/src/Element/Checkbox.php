@@ -1,4 +1,7 @@
 <?php
+namespace PFBC\Element;
+use PFBC\AbstractClass\OptionElement;
+
 class Element_Checkbox extends OptionElement {
 	protected $_attributes = array("type" => "checkbox");
 	protected $inline;

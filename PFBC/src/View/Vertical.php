@@ -1,4 +1,14 @@
 <?php
+namespace PFBC\View;
+use PFBC\AbstractClass\FormView;
+use PFBC\AbstractClass\Element;
+use PFBC\Element\Element_Hidden;
+use PFBC\Element\Element_Button;
+use PFBC\Element\Element_HTML;
+use PFBC\Element\Element_Checkbox;
+use PFBC\Element\Element_File;
+use PFBC\Element\Element_Radio;
+
 class View_Vertical extends FormView {
     private $sharedCount = 0;
 

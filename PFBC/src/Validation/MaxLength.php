@@ -1,7 +1,9 @@
 <?php
 namespace PFBC\Validation;
+use PFBC\AbstractClass\Validation;
 
-class MaxLength extends \PFBC\Validation {
+
+class MaxLength extends Validation {
 	protected $message;
 	protected $limit;
 

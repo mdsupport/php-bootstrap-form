@@ -1,4 +1,7 @@
 <?php
+namespace PFBC\Element;
+use PFBC\Validation\Validation_Date;
+
 class Element_jQueryUIDate extends Element_Textbox {
 	protected $_attributes = array(
 		"type" => "text",

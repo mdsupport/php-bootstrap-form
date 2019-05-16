@@ -1,4 +1,6 @@
 <?php
+namespace PFBC\AbstractClass;
+
 abstract class Validation extends Base {
     protected $message = "%element% is invalid.";
 

@@ -1,4 +1,8 @@
 <?php
+namespace PFBC\Element;
+use PFBC\AbstractClass\Element;
+
+
 class Element_State extends Element_Select {
 	public function __construct($label, $name, array $properties = null) {
 		$options = array(

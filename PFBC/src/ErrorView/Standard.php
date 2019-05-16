@@ -1,4 +1,7 @@
 <?php
+namespace PFBC\ErrorView;
+use PFBC\AbstractClass\ErrorView;
+
 class ErrorView_Standard extends ErrorView {
     public function applyAjaxErrorResponse() {
         $id = $this->_form->getAttribute("id");

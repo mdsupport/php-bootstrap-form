@@ -1,4 +1,6 @@
 <?php
+namespace PFBC\AbstractClass;
+
 abstract class OptionElement extends Element {
     protected $options;
 

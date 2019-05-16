@@ -1,4 +1,8 @@
 <?php
+namespace PFBC\Element;
+use PFBC\AbstractClass\Element;
+
+
 class Element_Button extends Element {
 	protected $_attributes = array("type" => "submit", "value" => "Submit");
 	protected $icon;

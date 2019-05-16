@@ -1,4 +1,7 @@
 <?php
+namespace PFBC\Element;
+use PFBC\Validation\Validation_Date;
+
 class Element_Date extends Element_Textbox {
 	protected $_attributes = array(
 		"type" => "date",

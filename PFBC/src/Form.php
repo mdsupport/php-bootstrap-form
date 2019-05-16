@@ -22,13 +22,12 @@ Copyright (c) 2015-2016 Alexander V. Butenko
 
 Version: 4.1-master
 */
-
-function PFBC_Load ($class) {
-    $file = dirname (__FILE__) . "/" . str_replace("_", DIRECTORY_SEPARATOR, $class) . ".php";
-    if(is_file ($file))
-        include_once $file;
-}
-spl_autoload_register("PFBC_Load");
+namespace PFBC;
+use PFBC\AbstractClass\Base;
+use PFBC\AbstractClass\Element;
+use PFBC\Element\Element_File;
+use PFBC\ErrorView\ErrorView_Standard;
+use PFBC\View\View_SideBySide;
 
 class Form extends Base {
     public static $SUBMIT = 99;

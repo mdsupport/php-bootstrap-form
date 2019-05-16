@@ -1,4 +1,6 @@
 <?php
+namespace PFBC\AbstractClass;
+
 abstract class Base {
     public function configure(array $properties = null) {
         if(!empty($properties)) {
@@ -61,7 +63,7 @@ abstract class Base {
     /**
      * Method is used by the Form class and all Element classes to return a string of html  attributes
      *
-     * @param $ignore Parameter allows special attributes from being included.
+     * @param string $ignore Parameter allows special attributes from being included.
      * @return string
      */
     public function getAttributes ($ignore = "") {
@@ -93,4 +95,3 @@ abstract class Base {
             $this->_attributes[$attribute] = $value;
     }
 }
-?>

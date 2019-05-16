@@ -1,4 +1,8 @@
 <?php
+namespace PFBC\AbstractClass;
+use PFBC\Form;
+use PFBC\Validation\Validation_Required;
+
 abstract class Element extends Base {
     protected $_errors = array();
     protected $_attributes = array();

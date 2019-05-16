@@ -1,4 +1,7 @@
 <?php
+namespace PFBC\Element;
+use PFBC\Validation\Validation_RegExp;
+
 class Element_Month extends Element_Textbox {
     protected $_attributes = array(
         "type" => "month",

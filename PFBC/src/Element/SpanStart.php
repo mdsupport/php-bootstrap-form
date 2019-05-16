@@ -1,4 +1,6 @@
 <?php
+namespace PFBC\Element;
+
 class Element_SpanStart extends Element_HTML {
 	public function __construct($value, $size = 6) {
         if (empty ($size))

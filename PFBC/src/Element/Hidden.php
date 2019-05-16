@@ -1,4 +1,8 @@
 <?php
+namespace PFBC\Element;
+use PFBC\AbstractClass\Element;
+
+
 class Element_Hidden extends Element {
 	protected $_attributes = array("type" => "hidden");
 

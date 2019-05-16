@@ -1,4 +1,8 @@
 <?php
+namespace PFBC\Element;
+use PFBC\Validation\Validation_RegExp;
+
+
 class Element_Week extends Element_Textbox {
     protected $_attributes = array(
         "type" => "week",
