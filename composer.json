@@ -1,6 +1,8 @@
 {
 	"name": "avbdr/php-bootstrap-form",
 	"description": "PHP Bootstrap Form Helper",
+    "keywords": ["php", "bootstrap", "forms", "classes", "helper"],
+    "type": "library",
 	"license": "MIT",
     "authors": [
         {
@@ -17,10 +19,20 @@
         }
 
     ],
+    "support": {
+        "issues": "https://github.com/avbdr/php-bootstrap-form/issues",
+    },
 	"require": {
 		"php": ">=5.3.0"
 	},
 	"autoload": {
-		"files": ["PFBC/Form.php"]
-	}
+        "psr-4": {
+           "PFBC\\": "src/"
+        }
+	},
+    "autoload-dev": {
+        "psr-4": {
+           "PFBCTest\\PFBC\\": "test/"
+        }
+    },
 }
