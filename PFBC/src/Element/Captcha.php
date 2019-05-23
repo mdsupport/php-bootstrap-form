@@ -1,9 +1,9 @@
 <?php
 namespace PFBC\Element;
 use PFBC\AbstractClass\Element;
-use PFBC\Validation\Validation_Captcha;
+use PFBC\Validation\Captcha;
 
-class Element_Captcha extends Element {
+class Captcha extends Element {
 	protected $privateKey = "6LcazwoAAAAAAD-auqUl-4txAK3Ky5jc5N3OXN0_";
 	protected $publicKey = "6LcazwoAAAAAADamFkwqj5KN1Gla7l4fpMMbdZfi";
 
@@ -12,7 +12,7 @@ class Element_Captcha extends Element {
 	}	
 
 	public function render() {
-		$this->validation[] = new Validation_Captcha($this->privateKey);
+		$this->validation[] = new Captcha($this->privateKey);
 		require_once(dirname(__FILE__) . "/../Resources/recaptchalib.php");
 		echo recaptcha_get_html($this->publicKey);
 	}

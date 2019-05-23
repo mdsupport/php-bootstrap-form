@@ -3,7 +3,7 @@ namespace PFBC\Validation;
 use PFBC\AbstractClass\Validation;
 
 
-class Validation_Url extends Validation {
+class Url extends Validation {
 	protected $message = "Error: %element% must contain a url (e.g. http://www.google.com).";
 
 	public function isValid($value) {

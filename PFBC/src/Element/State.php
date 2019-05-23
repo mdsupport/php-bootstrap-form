@@ -3,7 +3,7 @@ namespace PFBC\Element;
 use PFBC\AbstractClass\Element;
 
 
-class Element_State extends Element_Select {
+class State extends Select {
 	public function __construct($label, $name, array $properties = null) {
 		$options = array(
 			"" => "--Select State--",

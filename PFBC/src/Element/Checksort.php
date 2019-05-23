@@ -1,7 +1,7 @@
 <?php
 namespace PFBC\Element;
 
-class Element_Checksort extends Element_Sort {
+class Checksort extends Sort {
 	protected $_attributes = array("type" => "checkbox");
 	protected $inline;
 

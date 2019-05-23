@@ -3,7 +3,7 @@ namespace PFBC\Element;
 use PFBC\AbstractClass\OptionElement;
 
 
-class Element_Select extends OptionElement {
+class Select extends OptionElement {
 	protected $_attributes = array();
 
 	public function render() { 

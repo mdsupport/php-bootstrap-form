@@ -1,7 +1,7 @@
 <?php
 namespace PFBC\Element;
 
-class Element_YesNo extends Element_Radio {
+class YesNo extends Radio {
 	public function __construct($label, $name, array $properties = null) {
 		$options = array(
 			"1" => "Yes",

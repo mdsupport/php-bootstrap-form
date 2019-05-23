@@ -3,7 +3,7 @@ namespace PFBC\Element;
 use PFBC\AbstractClass\Element;
 
 
-class Element_Textbox extends Element {
+class Textbox extends Element {
 	protected $_attributes = array("type" => "text");
 	protected $prepend;
 	protected $append;

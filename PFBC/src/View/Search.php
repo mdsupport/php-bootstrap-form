@@ -1,6 +1,6 @@
 <?php
 namespace PFBC\View;
 
-class View_Search extends View_Inline {
+class Search extends Inline {
 	protected $class = "form-search";
 }	

@@ -1,4 +1,6 @@
 <?php
+    use PFBC\Form;
+
     session_start();
 ?>
 <!DOCTYPE html>
@@ -135,7 +137,7 @@ Form::close (false);
 </div>
 <p>Following code will produce a form like this:</p>
 <?php
-require_once ("../../PFBC/Form.php");
+
 $options = Array ('1' => 'option #1', '2' => 'option #2');
 Form::open ("login");
     echo "<legend>Login</legend>";
@@ -316,7 +318,7 @@ If on the single page multiple forms should be generated it is possible to use a
     <tr>
         <td>validation</td>
         <td>object</td>
-        <td>Validation object. Ex: <?php echo htmlspecialchars ('"validation" => new Validation_Numeric()')?>. See <a href='#validation'>validation</a> for more info</td>
+        <td>Validation object. Ex: <?php echo htmlspecialchars ('"validation" => new Numeric()')?>. See <a href='#validation'>validation</a> for more info</td>
     </tr>
 </table>
 <br>
@@ -786,35 +788,35 @@ function finishCallback (data) {
         <th>Description</th>
     </tr>
     <tr>
-        <td>Validation_Required ()</td>
+        <td>Required ()</td>
         <td></td>
     </tr>
     <tr>
-        <td>Validation_AlphaNumeric ()</td>
+        <td>AlphaNumeric ()</td>
         <td>AlphaNumeric validation class will verify that the element's submitted value contains only letters, numbers, underscores, and/or hyphens</td>
     </tr>
     <tr>
-        <td>Validation_Numeric ()</td>
+        <td>Numeric ()</td>
         <td>Number element applies the Numeric validation rule by default.  If supported, HTML5 validation will also be provided client-side.</td>
     </tr>
     <tr>
-        <td>Validation_Email ()</td>
+        <td>Email ()</td>
         <td>Email element applies the Email validation rule by default.  If supported, HTML5 validation will also be provided client-side.</td>
     </tr>
     <tr>
-        <td>Validation_Date ()</td>
+        <td>Date ()</td>
         <td>Date element applies the RegExp validation rule by default - ensuring the following date format YYYY-MM-DD is adhered to.</td>
     </tr>
     <tr>
-        <td>Validation_RegExp ($regExp, $errorMessage)</td>
+        <td>RegExp ($regExp, $errorMessage)</td>
         <td>RegExp validation class provides the means to apply custom validation to an element.  Its constructor includes two parameters: the regular expression pattern to test and the error message to display if the pattern is not matched.</td>
     </tr>
     <tr>
-        <td>Validation_Captcha ()</td>
+        <td>Captcha ()</td>
         <td>Captcha element applies the Captcha validation, which uses <a href=\"http://www.google.com/recaptcha\">reCaptcha's anti-bot service</a> to reduce spam submissions.</td>
     </tr>
     <tr>
-        <td>Validation_Url ()</td>
+        <td>Url ()</td>
         <td>The Url element applies the Url validation rule by default.  If supported, HTML5 validation will also be provided client-side.</td>
     </tr>
 </table>

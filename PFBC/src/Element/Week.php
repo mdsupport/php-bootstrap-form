@@ -1,9 +1,9 @@
 <?php
 namespace PFBC\Element;
-use PFBC\Validation\Validation_RegExp;
+use PFBC\Validation\RegExp;
 
 
-class Element_Week extends Element_Textbox {
+class Week extends Textbox {
     protected $_attributes = array(
         "type" => "week",
         "pattern" => "\d{4}-W\d{2}"
@@ -17,7 +17,7 @@ class Element_Week extends Element_Textbox {
     }
 
     public function render() {
-        $this->validation[] = new Validation_RegExp("/" . $this->_attributes["pattern"] . "/", "Error: The %element% field must match the following date format: " . $this->_attributes["title"]);
+        $this->validation[] = new RegExp("/" . $this->_attributes["pattern"] . "/", "Error: The %element% field must match the following date format: " . $this->_attributes["title"]);
         parent::render();
     }
 }

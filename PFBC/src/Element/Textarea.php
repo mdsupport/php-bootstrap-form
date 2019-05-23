@@ -3,7 +3,7 @@ namespace PFBC\Element;
 use PFBC\AbstractClass\Element;
 
 
-class Element_Textarea extends Element {
+class Textarea extends Element {
 	protected $_attributes = array("rows" => "5");
 
 	public function render() {

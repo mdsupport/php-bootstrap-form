@@ -3,7 +3,7 @@ namespace PFBC\Validation;
 use PFBC\AbstractClass\Validation;
 
 
-class Validation_Captcha extends Validation {
+class Captcha extends Validation {
 	protected $message = "Error: The reCATPCHA response provided was incorrect.  Please re-try.";
 	protected $privateKey;
 

@@ -3,7 +3,7 @@ namespace PFBC\Validation;
 use PFBC\AbstractClass\Validation;
 
 
-class Validation_Date extends Validation {
+class Date extends Validation {
     protected $message = "Error: %element% must contain a valid date.";
 
     public function isValid($value) {

@@ -1,7 +1,7 @@
 <?php
 namespace PFBC\Element;
 
-class Element_File extends Element_Textbox {
+class File extends Textbox {
 	protected $_attributes = array("type" => "file");
     public $bootstrapVersion = 3;
 

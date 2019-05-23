@@ -2,25 +2,25 @@
 namespace PFBC\View;
 use PFBC\AbstractClass\Element;
 use PFBC\AbstractClass\FormView;
-use PFBC\Element\Element_Button;
-use PFBC\Element\Element_Checkbox;
-use PFBC\Element\Element_File;
-use PFBC\Element\Element_HTML;
-use PFBC\Element\Element_Hidden;
-use PFBC\Element\Element_Radio;
+use PFBC\Element\Button;
+use PFBC\Element\Checkbox;
+use PFBC\Element\File;
+use PFBC\Element\HTML;
+use PFBC\Element\Hidden;
+use PFBC\Element\Radio;
 
-class View_SideBySide extends FormView {
+class SideBySide extends FormView {
     protected $class = "form-horizontal";
     private $sharedCount = 0;
 
     public function renderElement ($element) {
         $colSize = 'col-xs-12 col-md-8';
 
-        if ($element instanceof Element_Hidden || $element instanceof Element_HTML || $element instanceof Element_Button) {
+        if ($element instanceof Hidden || $element instanceof HTML || $element instanceof Button) {
             $element->render();
             return;
         }
-        if (!$element instanceof Element_Radio && !$element instanceof Element_Checkbox && !$element instanceof Element_File)
+        if (!$element instanceof Radio && !$element instanceof Checkbox && !$element instanceof File)
             $element->appendAttribute("class", "form-control");
 
         if ($this->noLabel) {

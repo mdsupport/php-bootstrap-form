@@ -3,7 +3,7 @@ namespace PFBC\Element;
 use PFBC\AbstractClass\OptionElement;
 
 
-class Element_Sort extends OptionElement {
+class Sort extends OptionElement {
     protected $jQueryOptions;
 
 	public function getCSSFiles() {

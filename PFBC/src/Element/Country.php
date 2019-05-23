@@ -1,7 +1,7 @@
 <?php
 namespace PFBC\Element;
 
-class Element_Country extends Element_Select {
+class Country extends Select {
 	public function __construct($label, $name, array $properties = null) {
 		$options = array(
 			"" => "--Select Country--",

@@ -1,8 +1,8 @@
 <?php
 namespace PFBC\Element;
-use PFBC\Validation\Validation_Date;
+use PFBC\Validation\Date;
 
-class Element_jQueryUIDate extends Element_Textbox {
+class jQueryUIDate extends Textbox {
 	protected $_attributes = array(
 		"type" => "text",
 		"autocomplete" => "off"
@@ -27,7 +27,7 @@ class Element_jQueryUIDate extends Element_Textbox {
     }
 
     public function render() {
-        $this->validation[] = new Validation_Date;
+        $this->validation[] = new Date;
         parent::render();
     }
 }

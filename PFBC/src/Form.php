@@ -25,9 +25,9 @@ Version: 4.1-master
 namespace PFBC;
 use PFBC\AbstractClass\Base;
 use PFBC\AbstractClass\Element;
-use PFBC\Element\Element_File;
-use PFBC\ErrorView\ErrorView_Standard;
-use PFBC\View\View_SideBySide;
+use PFBC\Element\File;
+use PFBC\ErrorView\Standard;
+use PFBC\View\SideBySide;
 
 class Form extends Base {
     public static $SUBMIT = 99;
@@ -61,10 +61,10 @@ class Form extends Base {
         /*The Standard view class is applied by default and will be used unless a different view is
         specified in the form's configure method*/
         if(empty($this->view))
-            $this->view = new View_SideBySide;
+            $this->view = new SideBySide;
 
         if(empty($this->errorView))
-            $this->errorView = new ErrorView_Standard;
+            $this->errorView = new Standard;
 
         /*The resourcesPath property is used to identify where third-party resources needed by the
         project are located.  This property will automatically be set properly if the PFBC directory
@@ -98,7 +98,7 @@ class Form extends Base {
 
         /*For ease-of-use, the form tag's encytype attribute is automatically set if the File element
         class is added.*/
-        if($element instanceof Element_File)
+        if($element instanceof File)
             $this->_attributes["enctype"] = "multipart/form-data";
     }
 
@@ -193,7 +193,7 @@ class Form extends Base {
 
                     /*The File element must be handled differently b/c it uses the $_FILES superglobal and
                     not $_GET or $_POST.*/
-                    if($element instanceof Element_File)
+                    if($element instanceof File)
                         $data[$name] = $_FILES[$name]["name"];
 
                     if(isset($data[$name])) {
@@ -434,7 +434,7 @@ JS;
 
     public function addElements ($items) {
         foreach ($items as $id => $props) {
-            $elementClassName = "Element_" . $props[0];
+            $elementClassName = "" . $props[0];
             for ($i = 1; $i<=4;$i++)
                 if (!isset ($props[$i])) $props[$i] = null;
             $element = new $elementClassName ($props[1], $props[2], $props[3], $props[4]);
@@ -482,7 +482,7 @@ JS;
                 $default['ajax'] = 1;
                 $default['ajaxCallback']= $opts['ajax'];
             } else if ($key == 'view') {
-                $viewName = 'View_' . $val;
+                $viewName = '' . $val;
                 $default[$key] = new $viewName;
             } else
                 $default[$key] = $val;
@@ -527,7 +527,7 @@ JS;
     }
 
     private static function _call ($form, $type, $props) {
-        $elementClassName = "Element_$type";
+        $elementClassName = "$type";
         for ($i = 0; $i<=3;$i++)
             if (!isset ($props[$i])) $props[$i] = null;
 

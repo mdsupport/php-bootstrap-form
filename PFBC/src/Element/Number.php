@@ -1,12 +1,12 @@
 <?php
 namespace PFBC\Element;
-use PFBC\Validation\Validation_Numeric;
+use PFBC\Validation\Numeric;
 
-class Element_Number extends Element_Textbox {
+class Number extends Textbox {
 	protected $_attributes = array("type" => "number");
 
 	public function render() {
-		$this->validation[] = new Validation_Numeric;
+		$this->validation[] = new Numeric;
 		parent::render();
 	}
 }

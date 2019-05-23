@@ -2,7 +2,7 @@
 namespace PFBC\Element;
 
 
-class Element_CKEditor extends Element_Textarea {
+class CKEditor extends Textarea {
     protected $basic;
 
     public function render() {

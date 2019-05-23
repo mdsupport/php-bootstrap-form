@@ -1,7 +1,7 @@
 <?php
 namespace PFBC\Element;
 
-class Element_TinyMCE extends Element_Textarea {
+class TinyMCE extends Textarea {
     protected $basic;
 
     public function render() {

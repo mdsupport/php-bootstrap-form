@@ -2,7 +2,7 @@
 namespace PFBC\ErrorView;
 use PFBC\AbstractClass\ErrorView;
 
-class ErrorView_Standard extends ErrorView {
+class Standard extends ErrorView {
     public function applyAjaxErrorResponse() {
         $id = $this->_form->getAttribute("id");
         echo <<<JS

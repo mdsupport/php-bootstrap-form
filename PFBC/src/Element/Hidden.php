@@ -3,7 +3,7 @@ namespace PFBC\Element;
 use PFBC\AbstractClass\Element;
 
 
-class Element_Hidden extends Element {
+class Hidden extends Element {
 	protected $_attributes = array("type" => "hidden");
 
 	public function __construct($name, $value = "", array $properties = null) {

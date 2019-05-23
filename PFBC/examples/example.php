@@ -1,6 +1,8 @@
 <?php
+use PFBC\Form;
+
 session_start();
-require_once ("PFBC/Form.php");
+
 // Set default bootstrap version here that can be overrriden by request
 $version = '4';
 if (isset ($_GET['v']) && ($_GET['v'] !== $version))
@@ -47,68 +49,69 @@ $values['select'] = 2;
         <div class='row'>
             <div class='col-md-6'>
                 <?php
-                Form::open ("login", $values, array ('view' => "SideBySide$version"));
+                $objFm = new Form();
+                $objFm->open ("login", $values, array ('view' => "SideBySide$version"));
                 echo '<legend>Base</legend>';
-                Form::Hidden("id");
-                Form::Email("Email Address", "email", array("required" => 1, "prepend" => '@'));
-                Form::Password ("Password", "password", array("required" => 1));
+                $objFm->Hidden("id");
+                $objFm->Email("Email Address", "email", array("required" => 1, "prepend" => '@'));
+                $objFm->Password ("Password", "password", array("required" => 1));
 
-                Form::File("File", "file");
-                Form::Textarea("Textarea", "textarea");
-                Form::Textbox ("Text", "text", ['class' => 'form-control-lg', 'placeholder' => 'bootstrap4 .form-control-lg']);
-                Form::Textbox ("Text", "text", ['class' => 'form-control-sm', 'placeholder' => 'boostrap4 .form-control-sm']);
-                Form::Textbox ("Text", "text");
-                Form::Select("Select", "select", $options);
-                Form::HTML('<legend>HTML5</legend>');
-                Form::Phone("Phone", "phone", array ("append" => '<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>',
+                $objFm->File("File", "file");
+                $objFm->Textarea("Textarea", "textarea");
+                $objFm->Textbox ("Text", "text", ['class' => 'form-control-lg', 'placeholder' => 'bootstrap4 .form-control-lg']);
+                $objFm->Textbox ("Text", "text", ['class' => 'form-control-sm', 'placeholder' => 'boostrap4 .form-control-sm']);
+                $objFm->Textbox ("Text", "text");
+                $objFm->Select("Select", "select", $options);
+                $objFm->HTML('<legend>HTML5</legend>');
+                $objFm->Phone("Phone", "phone", array ("append" => '<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>',
                                                      "placeholder" => '(212) 3455-333'));
-                Form::Search("Search", "search");
-                Form::Url("Url", "url");
-                Form::Date("Date", "date");
-                Form::DateTime("DateTime", "datetime", array ('shared' => 'col-xs-12 col-md-4'));
-                Form::DateTimeLocal("", "DateTimeLocal", array ('shared' => 'col-xs-12 col-md-4', 'placeholder' => 'DateTime-Local'));
-                Form::Month("Month", "month");
-                Form::Week("Week", "week");
-                Form::Time("Time", "time");
-                Form::Number("Number", "Number");
-                Form::Range("Range", "Range");
-                Form::Color("Color", "Color");
+                $objFm->Search("Search", "search");
+                $objFm->Url("Url", "url");
+                $objFm->Date("Date", "date");
+                $objFm->DateTime("DateTime", "datetime", array ('shared' => 'col-xs-12 col-md-4'));
+                $objFm->DateTimeLocal("", "DateTimeLocal", array ('shared' => 'col-xs-12 col-md-4', 'placeholder' => 'DateTime-Local'));
+                $objFm->Month("Month", "month");
+                $objFm->Week("Week", "week");
+                $objFm->Time("Time", "time");
+                $objFm->Number("Number", "Number");
+                $objFm->Range("Range", "Range");
+                $objFm->Color("Color", "Color");
 
                 echo '<legend>Custom/Other</legend>';
-                Form::State("State", "State");
-                Form::Country("Country", "Country");
-                Form::YesNo("Yes/No", "YesNo");
-                Form::Captcha("Captcha");
+                $objFm->State("State", "State");
+                $objFm->Country("Country", "Country");
+                $objFm->YesNo("Yes/No", "YesNo");
+                $objFm->Captcha("Captcha");
                 ?>
             </div>
             <div class='col-md-6'>
                 <?php
                 echo '<legend>Checkboxes</legend>';
-                Form::Checkbox ("CheckInline", "Remember", $options, array('inline' => 1));
-                Form::Checkbox ("Regular", "something else", $options);
+                $objFm->Checkbox ("CheckInline", "Remember", $options, array('inline' => 1));
+                $objFm->Checkbox ("Regular", "something else", $options);
 
                 echo '<legend>Radios</legend>';
-                Form::Radio("Inline", "Remember", $options, array('inline' => 1));
-                Form::Radio("", "something else", $options);
+                $objFm->Radio("Inline", "Remember", $options, array('inline' => 1));
+                $objFm->Radio("", "something else", $options);
 
-                Form::HTML('<legend>jQuery UI</legend>');
-                Form::jQueryUIDate("Date", "jQueryUIDate");
-                Form::Sort("Sort", "Sort", $options);
-                Form::Checksort("Checksort", "Checksort", $options);
-                Form::Checksort("Checksort inline ", "Checksort", $options, array('inline' => 1));
+                $objFm->HTML('<legend>jQuery UI</legend>');
+                $objFm->jQueryUIDate("Date", "jQueryUIDate");
+                $objFm->Sort("Sort", "Sort", $options);
+                $objFm->Checksort("Checksort", "Checksort", $options);
+                $objFm->Checksort("Checksort inline ", "Checksort", $options, array('inline' => 1));
 
                 echo '<legend>WYSIWYG Editor</legend>';
-                Form::TinyMCE("TinyMCE", "TinyMCE");
-                Form::CKEditor("CKEditor", "CKEditor");
+                $objFm->TinyMCE("TinyMCE", "TinyMCE");
+                $objFm->CKEditor("CKEditor", "CKEditor");
 
-                Form::Button('GOGOGO', '');
-                Form::Button('GOGOGO', 'button');
-                Form::Button('GOGOGO', 'button', ['icon' => 'glyphicon glyphicon-earphone']);
+                $objFm->Button('GOGOGO', '');
+                $objFm->Button('GOGOGO', 'button');
+                $objFm->Button('GOGOGO', 'button', ['icon' => 'glyphicon glyphicon-earphone']);
                 ?>
             </div>
         </div>
     <?php
-    Form::close();
+    $objFm->close();
     ?>
     </div>
 </body>
