@@ -1,5 +1,7 @@
 <?php
-class Element_Button extends Element {
+namespace PFBC\Element;
+
+class Element_Button extends \PFBC\Element {
 	protected $_attributes = array("type" => "submit", "value" => "Submit");
 	protected $icon;
 

@@ -1,4 +1,6 @@
 <?php
+namespace PFBC;
+
 abstract class FormView extends Base {
     public $noLabel = false;
     protected $_form;

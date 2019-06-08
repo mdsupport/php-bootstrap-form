@@ -1,12 +1,14 @@
 <?php
-class Validation_Date extends Validation {
+namespace PFBC\Validation;
+
+class Validation_Date extends \PFBC\Validation {
     protected $message = "Error: %element% must contain a valid date.";
 
     public function isValid($value) {
         try {
-            $date = new DateTime($value);
+            $date = new \DateTime($value);
             return true;
-        } catch(Exception $e) {
+        } catch(\Exception $e) {
             return false;
         }
     }

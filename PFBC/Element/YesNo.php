@@ -1,4 +1,6 @@
 <?php
+namespace PFBC\Element;
+
 class Element_YesNo extends Element_Radio {
 	public function __construct($label, $name, array $properties = null) {
 		$options = array(

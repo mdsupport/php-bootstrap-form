@@ -23,12 +23,13 @@ Copyright (c) 2015-2016 Alexander V. Butenko
 Version: 4.1-master
 */
 
-function PFBC_Load ($class) {
-    $file = dirname (__FILE__) . "/" . str_replace("_", DIRECTORY_SEPARATOR, $class) . ".php";
-    if(is_file ($file))
-        include_once $file;
-}
-spl_autoload_register("PFBC_Load");
+namespace PFBC;
+
+use PFBC\Element\Element_File;
+use PFBC\Element\Element_Hidden;
+use PFBC\ErrorView\ErrorView_Standard;
+use PFBC\View\View_SideBySide;
+use PFBC\View\View_SideBySide4;
 
 class Form extends Base {
     public static $SUBMIT = 99;
@@ -62,7 +63,7 @@ class Form extends Base {
         /*The Standard view class is applied by default and will be used unless a different view is
         specified in the form's configure method*/
         if(empty($this->view))
-            $this->view = new View_SideBySide;
+            $this->view = new View\View_SideBySide;
 
         if(empty($this->errorView))
             $this->errorView = new ErrorView_Standard;
@@ -435,7 +436,7 @@ JS;
 
     public function addElements ($items) {
         foreach ($items as $id => $props) {
-            $elementClassName = "Element_" . $props[0];
+            $elementClassName = "PFBC\\Element\\Element_" . $props[0];
             for ($i = 1; $i<=4;$i++)
                 if (!isset ($props[$i])) $props[$i] = null;
             $element = new $elementClassName ($props[1], $props[2], $props[3], $props[4]);
@@ -483,7 +484,7 @@ JS;
                 $default['ajax'] = 1;
                 $default['ajaxCallback']= $opts['ajax'];
             } else if ($key == 'view') {
-                $viewName = 'View_' . $val;
+                $viewName = '\\PFBC\\View\\View_' . $val;
                 $default[$key] = new $viewName;
             } else
                 $default[$key] = $val;
@@ -528,7 +529,7 @@ JS;
     }
 
     private static function _call ($form, $type, $props) {
-        $elementClassName = "Element_$type";
+        $elementClassName = "\\PFBC\\Element\\Element_$type";
         for ($i = 0; $i<=3;$i++)
             if (!isset ($props[$i])) $props[$i] = null;
 

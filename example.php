@@ -1,12 +1,19 @@
 <?php
 session_start();
-require_once ("PFBC/Form.php");
+
+// include 'PFBC/autoload.php';
+require_once '../../autoload.php';
+
+//Import PFBC namespace
+use PFBC\Form;
+
 $version = '';
 if (isset ($_GET['v']) && $_GET['v'] == 4)
     $version = 4;
 $options = Array ('1' => 'option #1', '2' => 'option #2');
 
 // default values
+$values = [];
 $values['email'] = 'testemail@test.com';
 $values['password'] = 'testpass';
 $values['select'] = 2;

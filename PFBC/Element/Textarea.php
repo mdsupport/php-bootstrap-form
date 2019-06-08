@@ -1,5 +1,7 @@
 <?php
-class Element_Textarea extends Element {
+namespace PFBC\Element;
+
+class Element_Textarea extends \PFBC\Element {
 	protected $_attributes = array("rows" => "5");
 
 	public function render() {

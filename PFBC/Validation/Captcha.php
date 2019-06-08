@@ -1,5 +1,7 @@
 <?php
-class Validation_Captcha extends Validation {
+namespace PFBC\Validation;
+
+class Validation_Captcha extends \PFBC\Validation {
 	protected $message = "Error: The reCATPCHA response provided was incorrect.  Please re-try.";
 	protected $privateKey;
 

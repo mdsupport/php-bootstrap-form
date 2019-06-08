@@ -1,5 +1,15 @@
 <?php
-class View_Inline extends FormView {
+namespace PFBC\View;
+
+use PFBC\Element;
+use PFBC\Element\Element_Button;
+use PFBC\Element\Element_Checkbox;
+use PFBC\Element\Element_File;
+use PFBC\Element\Element_HTML;
+use PFBC\Element\Element_Hidden;
+use PFBC\Element\Element_Radio;
+
+class View_Inline extends \PFBC\FormView {
     protected $class = "form-inline";
 
     public function renderElement ($element) {

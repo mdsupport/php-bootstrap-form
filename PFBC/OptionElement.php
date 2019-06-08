@@ -1,5 +1,7 @@
 <?php
-abstract class OptionElement extends Element {
+namespace PFBC;
+
+abstract class OptionElement extends \PFBC\Element {
     protected $options;
 
     public function __construct($label, $name, $options, array $properties = null) {

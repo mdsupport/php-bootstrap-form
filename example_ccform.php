@@ -1,6 +1,14 @@
 <?php
 session_start();
-require_once ("PFBC/Form.php");
+
+// include 'PFBC/autoload.php';
+require_once '../../autoload.php';
+
+//Import PFBC namespace
+use PFBC\Form;
+use PFBC\Validation\Validation_AlphaNumeric;
+use PFBC\Validation\Validation_Numeric;
+
 $version = '';
 if (isset ($_GET['v']) && $_GET['v'] == 4)
     $version = 4;
@@ -14,6 +22,8 @@ if ($_POST) {
     Form::renderAjaxErrorResponse('payment2');
     exit;
 }
+
+$values = $months = $years = [];
 
 for ($i = 1;$i <= 9;$i++)
     $months[] = "0".$i;

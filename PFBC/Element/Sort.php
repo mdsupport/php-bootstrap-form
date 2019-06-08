@@ -1,4 +1,8 @@
 <?php
+namespace PFBC\Element;
+
+use PFBC\OptionElement;
+
 class Element_Sort extends OptionElement {
     protected $jQueryOptions;
 

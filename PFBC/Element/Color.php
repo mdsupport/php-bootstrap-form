@@ -1,4 +1,8 @@
 <?php
+namespace PFBC\Element;
+
+use PFBC\Validation\Validation_RegExp;
+
 class Element_Color extends Element_Textbox {
 	protected $_attributes = array("type" => "color");
 

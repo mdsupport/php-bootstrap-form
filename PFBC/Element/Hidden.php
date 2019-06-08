@@ -1,5 +1,7 @@
 <?php
-class Element_Hidden extends Element {
+namespace PFBC\Element;
+
+class Element_Hidden extends \PFBC\Element {
 	protected $_attributes = array("type" => "hidden");
 
 	public function __construct($name, $value = "", array $properties = null) {
